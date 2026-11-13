@@ -42,7 +42,7 @@ app.use(cors({
     // Allow requests with no origin (like mobile apps, curl, server-to-server)
     if (!origin) return callback(null, true);
     
-    // Allow configured origins or any cloudflare pages preview URL
+    // Allow configured origins or any verified cloudflare pages URL
     if (
       allowedOrigins.includes(origin) || 
       origin.endsWith('.pages.dev') ||
@@ -51,7 +51,11 @@ app.use(cors({
       return callback(null, true);
     }
     
-    callback(null, true); // Permissive in dev/staging preview
+    if (process.env.NODE_ENV === 'production') {
+      return callback(new Error('Cross-Origin Request Blocked: Origin not authorized by MODÉRA Security Policy.'));
+    }
+
+    callback(null, true);
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
