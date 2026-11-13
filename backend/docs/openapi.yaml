@@ -1,0 +1,91 @@
+openapi: 3.0.3
+info:
+  title: MODÉRA Luxury Fashion Platform API
+  description: High-performance RESTful API powering MODÉRA premium fashion retail.
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000/api
+    description: Local Development Server
+  - url: https://modera-backend.onrender.com/api
+    description: Production Server on Render
+paths:
+  /health:
+    get:
+      summary: System Health & Database Connectivity Status
+      responses:
+        '200':
+          description: OK
+  /auth/register:
+    post:
+      summary: Customer Registration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [firstName, lastName, email, password]
+              properties:
+                firstName: { type: string }
+                lastName: { type: string }
+                email: { type: string, format: email }
+                password: { type: string, minLength: 8 }
+                phone: { type: string, example: "+919876543210" }
+      responses:
+        '201':
+          description: Created
+  /auth/login:
+    post:
+      summary: Customer / Admin Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string }
+      responses:
+        '200':
+          description: Logged in successfully
+  /products:
+    get:
+      summary: List Products with Advanced Filters & Sorting
+      parameters:
+        - name: gender
+          in: query
+          schema: { type: string, enum: [MEN, WOMEN, UNISEX] }
+        - name: category
+          in: query
+          schema: { type: string }
+        - name: search
+          in: query
+          schema: { type: string }
+        - name: minPrice
+          in: query
+          schema: { type: number }
+        - name: maxPrice
+          in: query
+          schema: { type: number }
+        - name: sort
+          in: query
+          schema: { type: string, enum: [price_asc, price_desc, newest, popular] }
+      responses:
+        '200':
+          description: Product listing
+  /orders/create:
+    post:
+      summary: Checkout & Order Creation
+      security:
+        - BearerAuth: []
+      responses:
+        '201':
+          description: Order placed
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
