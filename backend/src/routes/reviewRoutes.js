@@ -8,3 +8,4 @@ router.get('/product/:productId', getProductReviews);
 router.post('/', authenticateToken, createReview);
 
 export default router;
+

@@ -69,3 +69,4 @@ export const getCategoryBySlug = async (req, res, next) => {
     next(error);
   }
 };
+

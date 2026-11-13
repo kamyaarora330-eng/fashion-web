@@ -8,3 +8,4 @@ export const generateOrderNumber = () => {
   const randomSuffix = crypto.randomBytes(3).toString('hex').toUpperCase();
   return `MOD-${dateStr}-${randomSuffix}`;
 };
+

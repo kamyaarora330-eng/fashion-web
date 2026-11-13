@@ -51,3 +51,4 @@ router.use('/newsletter', newsletterRoutes);
 router.use('/admin', adminRoutes);
 
 export default router;
+

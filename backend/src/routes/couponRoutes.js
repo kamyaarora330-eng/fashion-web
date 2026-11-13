@@ -9,3 +9,4 @@ router.get('/', listPublicCoupons);
 router.post('/validate', validate(validateCouponSchema), validateCoupon);
 
 export default router;
+

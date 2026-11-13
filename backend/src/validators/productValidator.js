@@ -52,3 +52,4 @@ export const productQuerySchema = z.object({
     limit: z.string().optional().default('12'),
   }),
 });
+

@@ -32,3 +32,4 @@ export const useWishlistStore = create((set, get) => ({
     });
   },
 }));
+

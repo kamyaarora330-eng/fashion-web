@@ -594,3 +594,4 @@ export const adminUpdateSettings = async (req, res, next) => {
     next(error);
   }
 };
+

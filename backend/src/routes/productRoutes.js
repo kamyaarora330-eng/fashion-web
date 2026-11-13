@@ -18,3 +18,4 @@ router.get('/related/:id', getRelatedProducts);
 router.get('/:slug', getProductBySlug);
 
 export default router;
+

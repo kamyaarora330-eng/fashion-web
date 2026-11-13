@@ -10,3 +10,4 @@ router.get('/', getWishlist);
 router.post('/toggle', toggleWishlist);
 
 export default router;
+

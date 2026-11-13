@@ -105,3 +105,4 @@ describe('Tax & Cart Order Calculations Test Suite (India Retail)', () => {
     assert.equal(totals.shipping, 0); // > 1999 so free shipping
   });
 });
+

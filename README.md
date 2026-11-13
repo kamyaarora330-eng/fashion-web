@@ -171,3 +171,4 @@ npm test
 
 ## ⚖ License & Copyright
 © 2026 MODÉRA Luxury Fashion Pvt. Ltd. All rights reserved. Registered under Indian Companies Act.
+

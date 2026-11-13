@@ -29,3 +29,4 @@ router.post('/forgot-password', authLimiter, forgotPassword);
 router.post('/bootstrap-admin', authLimiter, bootstrapAdmin);
 
 export default router;
+

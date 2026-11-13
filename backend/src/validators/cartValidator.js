@@ -13,3 +13,4 @@ export const updateCartItemSchema = z.object({
     newVariantId: z.string().uuid().optional(), // In case customer changes size/color directly in cart
   }),
 });
+

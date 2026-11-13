@@ -389,3 +389,4 @@ model StoreSettings {
   announcementText      String   @default("Complimentary Express Delivery on orders above ₹1,999 across India | Code: MODERA10")
   updatedAt             DateTime @updatedAt
 }
+

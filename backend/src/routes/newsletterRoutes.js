@@ -6,3 +6,4 @@ const router = Router();
 router.post('/subscribe', subscribeNewsletter);
 
 export default router;
+

@@ -65,3 +65,4 @@ export const calculateOrderTotals = ({
     total: Number(total.toFixed(2)),
   };
 };
+

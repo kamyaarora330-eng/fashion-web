@@ -272,3 +272,4 @@ export const getRelatedProducts = async (req, res, next) => {
     next(error);
   }
 };
+

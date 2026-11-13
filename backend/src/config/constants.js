@@ -52,3 +52,4 @@ export const DEFAULT_STORE_SETTINGS = {
   codEnabled: true,
   codFee: 49.0, // Nominal handling fee for Cash on Delivery
 };
+

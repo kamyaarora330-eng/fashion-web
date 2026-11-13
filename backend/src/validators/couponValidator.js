@@ -21,3 +21,4 @@ export const createCouponSchema = z.object({
     isActive: z.boolean().default(true),
   }),
 });
+
