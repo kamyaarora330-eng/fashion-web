@@ -30,7 +30,7 @@ services:
       - key: JWT_EXPIRES_IN
         value: 7d
       - key: FRONTEND_URL
-        sync: false
+        value: https://modera-frontend.yugdhall45.workers.dev
       - key: RAZORPAY_KEY_ID
         sync: false
       - key: RAZORPAY_KEY_SECRET
@@ -43,4 +43,3 @@ services:
         sync: false
       - key: CLOUDINARY_API_SECRET
         sync: false
-

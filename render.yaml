@@ -13,7 +13,7 @@ services:
     plan: free
     region: singapore
     rootDir: backend
-    buildCommand: "npm ci && npx prisma generate && npx prisma migrate deploy"
+    buildCommand: "npm install && npx prisma generate && npx prisma migrate deploy"
     startCommand: "npm run start"
     healthCheckPath: /api/health
     autoDeploy: true
@@ -31,7 +31,7 @@ services:
       - key: JWT_EXPIRES_IN
         value: 7d
       - key: FRONTEND_URL
-        sync: false
+        value: https://modera-frontend.yugdhall45.workers.dev
       - key: RAZORPAY_KEY_ID
         sync: false
       - key: RAZORPAY_KEY_SECRET
@@ -44,4 +44,3 @@ services:
         sync: false
       - key: CLOUDINARY_API_SECRET
         sync: false
-
