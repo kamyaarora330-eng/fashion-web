@@ -1,0 +1,10 @@
+{
+  "name": "modera-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "cd backend && npm install && npx prisma generate",
+    "start": "cd backend && npm start"
+  }
+}
